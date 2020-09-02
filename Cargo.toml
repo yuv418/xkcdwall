@@ -1,0 +1,17 @@
+[package]
+name = "xkcdwall"
+version = "0.1.0"
+authors = ["Ramesh Balaji <post2rb@hotmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+xkcd_get = "0.2.0"
+wallpaper = "2.0.1"
+image = "0.23.9"
+tempfile = "3.1.0"
+reqwest = { version = "0.10.8" , features = ["blocking", "json"] }
+bytes = "0.5.6"
+rand = "0.7.3"
+wallpaper_rs = "0.1.0"
