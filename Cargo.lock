@@ -2026,15 +2026,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "wallpaper_rs"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cf4587a582a18bd3a97f67b90ab82217ba7d2ca2b4b660720be124d5eff1819f"
-dependencies = [
- "enquote",
-]
-
-[[package]]
 name = "want"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2228,6 +2219,5 @@ dependencies = [
  "reqwest 0.10.8",
  "tempfile",
  "wallpaper",
- "wallpaper_rs",
  "xkcd_get",
 ]

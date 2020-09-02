@@ -14,4 +14,3 @@ tempfile = "3.1.0"
 reqwest = { version = "0.10.8" , features = ["blocking", "json"] }
 bytes = "0.5.6"
 rand = "0.7.3"
-wallpaper_rs = "0.1.0"

@@ -4,7 +4,6 @@ extern crate reqwest;
 extern crate xkcdwall;
 extern crate rand;
 extern crate wallpaper;
-extern crate wallpaper_rs;
 
 use image::imageops;
 use tempfile::tempdir;
@@ -12,7 +11,6 @@ use std::env;
 use xkcd_get::Comic;
 use rand::Rng;
 use std::process;
-use wallpaper_rs::{Desktop, DesktopEnvt};
 
 fn main() {
 
@@ -86,7 +84,7 @@ fn run(mut imgbuf: image::RgbImage, xkcd_num: u32) {
 
             let old_height = new_height;
 
-            new_height = new_height * 0.6;
+            new_height = imgbuf.dimensions().1 as f32 * 0.6;
             new_width = (new_height/old_height) * new_width;
         }
 
@@ -102,6 +100,5 @@ fn run(mut imgbuf: image::RgbImage, xkcd_num: u32) {
     let temp_wall_path_str = temp_wall_path.to_str().expect("Expected a string for the path, but something happened.");
     imgbuf.save(&temp_wall_path_str).unwrap();
 
-    let wall_setter = DesktopEnvt::new().expect("Tried to set your wallpaper, but it didn't work!");
-    wall_setter.set_wallpaper(&temp_wall_path_str).unwrap();
+    wallpaper::set_from_path(&temp_wall_path_str).unwrap();
 }
